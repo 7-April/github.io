@@ -9,7 +9,7 @@
       padding: 0;
       height: 100%;
       font-family: 'Courier New', monospace;
-      color: #00ff00;
+      color: #ff1100;
       overflow: hidden;
     }
 
@@ -34,7 +34,7 @@
       white-space: nowrap;
       overflow: hidden;
       background: rgba(0, 0, 0, 0.8);
-      color: #00ff00;
+      color: #ff1100;
       font-size: 1.2em;
     }
 
@@ -54,17 +54,17 @@
       text-align: center;
       margin-top: 20px;
       position: relative;
-      color: #00ff00;
+      color: #ff1100;
       animation: glitch 1s infinite;
     }
 
     @keyframes glitch {
-      0% { text-shadow: 2px 0 #00ff00; }
-      20% { text-shadow: -2px 0 #00ff00; }
-      40% { text-shadow: 2px -2px #00ff00; }
-      60% { text-shadow: -2px 2px #00ff00; }
-      80% { text-shadow: 2px 2px #00ff00; }
-      100% { text-shadow: -2px -2px #00ff00; }
+      0% { text-shadow: 2px 0 #000000; }
+      20% { text-shadow: -2px 0 #000000; }
+      40% { text-shadow: 2px -2px #050505; }
+      60% { text-shadow: -2px 2px #ff1100; }
+      80% { text-shadow: 2px 2px #202020; }
+      100% { text-shadow: -2px -2px #050505; }
     }
 
     .center-image {
@@ -73,7 +73,7 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      border: 2px solid #00ff00;
+      border: 2px solid #040704;
     }
 
     .info {
@@ -90,7 +90,7 @@
     }
 
     .discord-link a {
-      color: #00ff00;
+      color: #ff0404;
       text-decoration: none;
     }
   </style>
@@ -103,9 +103,9 @@
   <!-- تشغيل صوت يوتيوب بدون فيديو -->
   <div style="width:0; height:0; overflow:hidden;">
     <iframe 
-      src="https://www.youtube.com/embed/Q2n-pMR5JkI?start=44&autoplay=1&mute=0&controls=0&loop=1&playlist=Q2n-pMR5JkI" 
+      src="https://www.youtube.com/embed/iHj58RPa7vk?start=49&autoplay=1&mute=0&controls=0&loop=1&playlist=iHj58RPa7vk" 
       frameborder="0" 
-      allow="autoplay" 
+      allow="autoplay; mute"
       allowfullscreen>
     </iframe>
   </div>
@@ -131,18 +131,18 @@
 
   <!-- نص متحرك سفلي -->
   <div class="moving-text">
-    <p>7April with you don't worry — 305 — 7April with you don't worry —</p>
+    <p>7April with you don't worry — 7April with you don't worry — 7April with you don't worry —</p>
   </div>
 
   <!-- جلب معلومات الزائر -->
   <script>
-    fetch('https://ipapi.co/json/')
-      .then(response => response.json())
+fetch('https://ipinfo.io/json')
+.then(response => response.json())
       .then(data => {
         document.getElementById('visitor-info').innerHTML = `
           <p>IP: ${data.ip}</p>
           <p>المدينة: ${data.city}</p>
-          <p>الدولة: ${data.country_name}</p>
+          <p>الدولة: ${data.country}</p>
           <p>مقدم الخدمة: ${data.org}</p>
         `;
       })
